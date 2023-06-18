@@ -134,7 +134,6 @@ class QLearningAgent(ReinforcementAgent):
         qvalue = self.getQValue(state, action)
         next_value = self.getValue(nextState)
 
-        # new_value = qvalue + alpha * (reward + disc * next_value - qvalue)
         new_value = (1 - alpha) * qvalue + alpha * (reward + disc * next_value)
 
         self.setQValue(state, action, new_value)
